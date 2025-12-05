@@ -11,3 +11,4 @@ psycopg2-binary
 python-decouple
 dj-database-url
 django-debug-toolbar
+drf-nested-routers
