@@ -15,7 +15,11 @@ from datetime import timedelta
 load_dotenv()
 
 # Database Setup
+# Database Setup
 DATABASE_URL = os.getenv("DATABASE_URL")
+if DATABASE_URL and DATABASE_URL.startswith("postgres://"):
+    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
+
 engine = create_engine(DATABASE_URL)
 
 def create_db_and_tables():
@@ -148,11 +152,12 @@ async def chat_endpoint(request: ChatRequest, current_user: Optional[str] = Depe
         
         messages.append({"role": "user", "content": request.message})
 
+        model = os.getenv("OPENROUTER_MODEL", "mistralai/mistral-7b-instruct:free")
         completion = client.chat.completions.create(
-            model="mistralai/mistral-7b-instruct:free",
+            model=model,
             messages=messages,
             extra_headers={
-                "HTTP-Referer": "http://localhost:3000",
+                "HTTP-Referer": "https://truthbot-letscode.netlify.app", # Update to prod URL
                 "X-Title": "NIRD Village AI",
             },
         )

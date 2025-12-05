@@ -6,8 +6,13 @@ from jose import JWTError, jwt
 from passlib.context import CryptContext
 from sqlmodel import Session, select
 from models import User
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 # In a real app, use a proper secret key management
-SECRET_KEY = "supersecretkeyforhackathon"
+SECRET_KEY = os.getenv("SECRET_KEY", "supersecretkeyforhackathon")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
