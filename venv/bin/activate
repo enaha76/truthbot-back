@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV=/home/adias/Videos/nuit_info_prep/MiniMind-main/backend/venv
+VIRTUAL_ENV=/home/adias/Videos/nuit_info_prep/minmin/truthbot/backend/venv
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

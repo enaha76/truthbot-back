@@ -1,4 +1,4 @@
-#!/home/adias/Videos/nuit_info_prep/MiniMind-main/backend/venv/bin/python3
+#!/home/adias/Videos/nuit_info_prep/minmin/truthbot/backend/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

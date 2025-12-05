@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV /home/adias/Videos/nuit_info_prep/MiniMind-main/backend/venv
+set -gx VIRTUAL_ENV /home/adias/Videos/nuit_info_prep/minmin/truthbot/backend/venv
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/"bin $PATH
